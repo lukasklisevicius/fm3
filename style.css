@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
+* {box-sizing: border-box;}
+
+:root {
+    --primary : hsl(257, 40%, 49%);
+    --primary-soft : hsl(300, 69%, 71%);
+}
+h1 {font-weight: bold;}
+.content {
+    display: flex;
+    flex-direction: column;
+    grid-area: conten;
+    height: 100%;
+    margin: 0;
+}
+.logo {
+    display: flex;
+    grid-area: logo;
+    text-align: left;
+    margin: 10% 0
+}
+.footer {
+    grid-area: footer;
+}
+
+body {
+    max-width: 100%;
+    background-image: url(images/bg-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    background-color: var(--primary);
+    color: #fff;
+    font-family: 'Open Sans';
+    font-size: 16px;
+    padding: 5% 5%;
+    text-align: center;
+
+
+}
+
+img {
+    width: 100%;
+}
+
+button {
+    margin: 5% 0;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 1rem 3rem;
+    border: 0;
+    color: var(--primary);
+    border-radius: 1.5rem;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+}
+
+button:focus {
+    outline: none;
+}
+button:active {
+    transform: scale(0.96);
+    font-size: 18px;
+}
+button:hover {
+    background-color: var(--primary-soft);
+    color: #fff;
+}
+
+
+
+
+
+.footer a i{
+    border-radius: 50%;
+    border: 2px solid white;
+    width: 55px;
+    height: 55px;
+    font-size: 1.5em;
+    padding: 15px;
+    color: #fff;
+    margin: 10px;
+}
+
+.footer a i:hover {
+    color: var(--primary-soft);
+    border-color: var(--primary-soft);
+}
+
+.footer a i.fa-facebook-f {
+    padding-left: 16px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "logo"
+                         "conten"
+                         "footer";
+}
+
+
+
+
+
+@media(min-width: 800px){
+    body{
+        background-image: url(images/bg-desktop.svg);
+        padding: 50px;
+    }
+
+    .logo {
+        margin: 0;
+    }
+    .logo img {
+        max-width: 20%;
+        justify-content: start;
+        align-items: flex-start;
+    }
+
+
+
+    .content{
+        text-align: left;
+        margin: 0;
+        flex-direction: row;
+}
+.content img {
+    max-width: 50%;
+}
+.text {
+    margin: 5%;
+}
+
+    .footer {
+        text-align: right;
+    }
+
+    .container {
+        grid-gap: 20px;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: "logo logo"
+                             "conten conten"
+                             "footer footer";
+
+    }
+
+}
